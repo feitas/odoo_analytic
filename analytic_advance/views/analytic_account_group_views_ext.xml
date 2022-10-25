@@ -15,8 +15,8 @@
     </record>
 
     <record id="analytic.account_analytic_group_action" model="ir.actions.act_window">
-        <field name="name">Analytic Account Groups Ext</field>
+        <field name="name">Analytic Account Groups</field>
         <field name="res_model">account.analytic.group</field>
-        <field name="search_view_id" ref="odoo_analytic.view_account_analytic_line_filter"/>
+        <field name="search_view_id" ref="analytic_advance.view_account_analytic_group_search_ext"/>
     </record>
 </odoo>
