@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_analytic_group_search_ext" model="ir.ui.view">
+        <field name="name">account.analytic.group.search.ext</field>
+        <field name="model">account.analytic.group</field>
+        <field name="arch" type="xml">
+            <search string="Search Analytic Group">
+                <field name="name"/>
+            </search>
+            <!-- TODO 添加分析账户组account.analytic.group的树状结构 -->
+            <!-- <searchpanel class="account_root">
+                <field name="parent_id"/>
+            </searchpanel> -->
+        </field>
+    </record>
+
+    <record id="analytic.account_analytic_group_action" model="ir.actions.act_window">
+        <field name="name">Analytic Account Groups Ext</field>
+        <field name="res_model">account.analytic.group</field>
+        <field name="search_view_id" ref="odoo_analytic.view_account_analytic_line_filter"/>
+    </record>
+</odoo>
