@@ -5,11 +5,26 @@
         <field name="model">account.analytic.default</field>
         <field name="inherit_id" ref="account.view_account_analytic_default_form"/>
         <field name="arch" type="xml">
-            <field name="company_id" position="after">
-                <separator string="Compute Rule" colspan="4"/>
+            <xpath expr="//group[1]" position="after">
+                <separator string="计算" colspan="4"/>
                 <!-- TODO 在view_account_analytic_default_form中添加新加入的计算规则 -->
                 <!-- 添加操作数1类型（模型/接口/上级结果）,字段，操作数2类型（模型/接口/上级结果），操作符（加/减/乘/除） -->
-            </field>>
+                <group>
+                    <group col="2">
+                        <field name="first_type"/>
+                        <field name="first_model" attrs="{'invisible': [('first_type', '!=', 'model')]}"/>
+                        <field name="first_api" attrs="{'invisible': [('first_type', '!=', 'api')]}"/>
+                        <field name="first_field_name" attrs="{'invisible': [('first_type', '=', False)]}"/>
+                        <field name="operator"/>
+                    </group>
+                    <group col="2">
+                        <field name="second_type"/>
+                        <field name="second_model" attrs="{'invisible': [('second_type', '!=', 'model')]}"/>
+                        <field name="second_api" attrs="{'invisible': [('second_type', '!=', 'api')]}"/>
+                        <field name="second_field_name" attrs="{'invisible': [('second_type', '=', False)]}"/>
+                    </group>
+                </group>
+            </xpath>
         </field>
     </record>
 </odoo>
