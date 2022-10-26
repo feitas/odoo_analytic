@@ -14,7 +14,7 @@
 
 ## 贡献者
 
-[<a href="https://github.com/feitas">乐川</a>] | [<a href="https://github.com/granzonchen">银枫</a>]
+[<a href="https://github.com/feitas">Feitas</a>] | [<a href="https://github.com/granzonchen">granzonchen</a>] | [<a href="https://github.com/togoodcoder">togoodcoder</a>] | [<a href="https://github.com/yingqian666">yingqian666</a>]
 
 
 ## 如何开发
