@@ -6,17 +6,22 @@
         <field name="arch" type="xml">
             <search string="Search Analytic Group">
                 <field name="name"/>
-            </search>
-            <!-- TODO 添加分析账户组account.analytic.group的树状结构 -->
-            <!-- <searchpanel class="account_root">
+                <field name="company_id" groups="base.group_multi_company"/>
                 <field name="parent_id"/>
-            </searchpanel> -->
+                <group expand="0" string="Group By">
+                    <filter string="Group" name='parent' domain="[]" context="{'group_by':'parent_id'}"/>
+                    <filter string="Company" name="company" context="{'group_by':'company_id'}" groups="base.group_multi_company" />
+                </group>
+                <searchpanel>
+                    <field name="parent_id" string="Groups" enable_counters="1"/>
+                </searchpanel>
+            </search>
         </field>
     </record>
 
     <record id="analytic.account_analytic_group_action" model="ir.actions.act_window">
-        <field name="name">Analytic Account Groups Ext</field>
+        <field name="name">Analytic Account Groups</field>
         <field name="res_model">account.analytic.group</field>
-        <field name="search_view_id" ref="odoo_analytic.view_account_analytic_line_filter"/>
+        <field name="search_view_id" ref="analytic_advance.view_account_analytic_group_search_ext"/>
     </record>
 </odoo>
