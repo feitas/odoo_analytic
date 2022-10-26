@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_analytic_group_search_ext" model="ir.ui.view">
+        <field name="name">account.analytic.group.search.ext</field>
+        <field name="model">account.analytic.group</field>
+        <field name="arch" type="xml">
+            <search string="Search Analytic Group">
+                <field name="name"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="parent_id"/>
+                <group expand="0" string="Group By">
+                    <filter string="Group" name='parent' domain="[]" context="{'group_by':'parent_id'}"/>
+                    <filter string="Company" name="company" context="{'group_by':'company_id'}" groups="base.group_multi_company" />
+                </group>
+                <searchpanel>
+                    <field name="parent_id" string="Groups" enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+    <record id="analytic.account_analytic_group_action" model="ir.actions.act_window">
+        <field name="name">Analytic Account Groups</field>
+        <field name="res_model">account.analytic.group</field>
+        <field name="search_view_id" ref="analytic_advance.view_account_analytic_group_search_ext"/>
+    </record>
+</odoo>
