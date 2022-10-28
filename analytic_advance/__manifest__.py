@@ -4,7 +4,7 @@
     'author': '潍坊飞塔思信息科技有限公司',
     'website': 'https://www.wffeitas.com',
     'category': 'Accounting/Accounting',
-    'depends': ['base', 'mail'],
+    'depends': ['base', 'mail', 'analytic', 'account'],
     'description': """
 Module for odoo analytic accounting cost.
 ===============================================

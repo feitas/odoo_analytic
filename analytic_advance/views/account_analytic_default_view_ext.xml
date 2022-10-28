@@ -25,6 +25,7 @@
                     </group>
                 </group>
             </xpath>
+
         </field>
     </record>
 </odoo>
