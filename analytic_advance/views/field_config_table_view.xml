@@ -20,11 +20,11 @@
             <form>
                 <group>
                     <group>
-                        <field name="model_name"/>
-                        <field name="field_name" attrs="{'invisible': [('model_name', '=',False)]}"/>
+                        <field name="model_name" required="1"/>
+                        <field name="field_name" required="1" attrs="{'invisible': [('model_name', '=',False)]}"/>
                     </group>
                     <group>
-                        <field name="name" attrs="{'invisible': [('field_name', '=',False)]}"/>
+                        <field name="name" required="1" attrs="{'invisible': [('field_name', '=',False)]}"/>
                     </group>
                 </group>
             </form>
