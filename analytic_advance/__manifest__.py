@@ -11,8 +11,10 @@ Module for odoo analytic accounting cost.
 
     """,
     'data': [
+        'security/ir.model.access.csv',
         'views/account_analytic_default_view_ext.xml',
         'views/analytic_account_group_views_ext.xml',
+        'views/field_config_table_view.xml',
     ],
     'demo': [
     ],
