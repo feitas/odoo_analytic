@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_field_config_table_tree" model="ir.ui.view">
+        <field name="name">filed.config.table.tree</field>
+        <field name="model">field.config.table</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="model_name"/>
+                <field name="field_name"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_field_config_table_form" model="ir.ui.view">
+        <field name="name">filed.config.table.form</field>
+        <field name="model">field.config.table</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="model_name"/>
+                        <field name="field_name" attrs="{'invisible': [('model_name', '=',False)]}"/>
+                    </group>
+                    <group>
+                        <field name="name" attrs="{'invisible': [('field_name', '=',False)]}"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_field_config_table_form_search" model="ir.ui.view">
+            <field name="name">filed.config.table.search</field>
+            <field name="model">field.config.table</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="model_name"/>
+                    <field name="field_name"/>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+    <record id="action_field_config_table" model="ir.actions.act_window">
+        <field name="name">字段配置表</field>
+        <field name="res_model">field.config.table</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_field_config_table_form_search"/>
+    </record>
+
+    <menuitem id="menu_field_config_table"
+            name="字段配置表"
+            action="action_field_config_table"
+            parent="account.menu_analytic_accounting"
+            sequence="99"/>
+</odoo>
