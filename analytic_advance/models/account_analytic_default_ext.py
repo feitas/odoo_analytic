@@ -25,26 +25,26 @@ class AccountAnalyticDefaultExt(models.Model):
 
     @api.onchange('first_field_config_name')
     def _onchange_first_field_config_name(self):
-        for vals in self:
-            vals.first_model = vals.first_field_config_name.model_name.id
-            vals.first_field_name = vals.first_field_config_name.field_name.name
+        for record in self:
+            record.first_model = record.first_field_config_name.model_name.id
+            record.first_field_name = record.first_field_config_name.field_name.name
     
     @api.onchange('second_field_config_name')
     def _onchange_second_field_config_name(self):
-        for vals in self:
-            vals.second_model = vals.second_field_config_name.model_name.id
-            vals.second_field_name = vals.second_field_config_name.field_name.name
+        for record in self:
+            record.second_model = record.second_field_config_name.model_name.id
+            record.second_field_name = record.second_field_config_name.field_name.name
 
     @api.onchange('first_type')
     def _onchange_first_type(self):
-        for vals in self:
-            vals.first_model=""
-            vals.first_field_name=""
-            vals.first_field_config_name=""
+        for record in self:
+            record.first_model=""
+            record.first_field_name=""
+            record.first_field_config_name=""
     
     @api.onchange('second_type')
     def _onchange_second_type(self):
-        for vals in self:
-            vals.second_model=""
-            vals.second_field_name=""
-            vals.second_field_config_name=""
+        for record in self:
+            record.second_model=""
+            record.second_field_name=""
+            record.second_field_config_name=""

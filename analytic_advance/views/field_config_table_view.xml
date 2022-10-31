@@ -53,5 +53,6 @@
     <menuitem id="menu_field_config_table"
             name="字段配置表"
             action="action_field_config_table"
-            parent="account.menu_analytic_accounting"/>
+            parent="account.menu_analytic_accounting"
+            sequence="99"/>
 </odoo>
