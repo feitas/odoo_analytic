@@ -3,6 +3,7 @@ from odoo import models, fields
 
 class AccountAnalyticMonth(models.Model):
     _name = 'account.analytic.month'
+    _description = 'Account Analytic Month'
 
     name = fields.Char()
     type = fields.Selection([('standard', '标准'),('infact', '实际')], string="类型")
