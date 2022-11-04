@@ -23,9 +23,33 @@
                         <field name="second_api" attrs="{'invisible': [('second_type', '!=', 'api')]}"/>
                         <field name="second_field_name" attrs="{'invisible': ['|',('first_type', '=', False),('first_type', '=', 'model')]}"/>
                     </group>
+                    <group>
+                        <field name="version_id"/>
+                    </group>
                 </group>
             </xpath>
 
+        </field>
+    </record>
+    <record id="view_account_analytic_default_tree_ext" model="ir.ui.view">
+        <field name="name">account.analytic.default.tree.ext</field>
+        <field name="model">account.analytic.default</field>
+        <field name="inherit_id" ref="account.view_account_analytic_default_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="version_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_analytic_default_search_ext" model="ir.ui.view">
+        <field name="name">account.analytic.default.search.ext</field>
+        <field name="model">account.analytic.default</field>
+        <field name="inherit_id" ref="account.view_account_analytic_default_form_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="version_id"/>
+            </xpath>
         </field>
     </record>
 </odoo>

@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_field_config_table,account.filed.config.table,model_field_config_table,base.group_user,1,1,1,1
+access_account_analytic_version,access_account_analytic_version,model_account_analytic_version,base.group_user,1,1,1,1
+access_account_analytic_month,access_account_analytic_month,model_account_analytic_month,base.group_user,1,1,1,1
