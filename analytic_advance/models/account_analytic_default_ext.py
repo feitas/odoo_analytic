@@ -8,6 +8,8 @@ _logger = logging.getLogger(__name__)
 class AccountAnalyticDefaultExt(models.Model):
     _inherit = "account.analytic.default"
 
+    version_id = fields.Many2one('account.analytic.version', string='版本')
+
     first_name = fields.Char(string='操作数1名称')
     first_type = fields.Selection([('model','模型'),('api','接口'),('pre','上级结果')],string="操作数1类型",default="model")
     first_model = fields.Many2one('ir.model',string="模型")

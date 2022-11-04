@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem name="Account Analytic Version"
+        id="menu_account_analytic_version"
+        action="action_account_analytic_version"
+        parent="account.menu_analytic_accounting"
+        sequence="21">
+    </menuitem>
+    <menuitem name="Account Analytic Month"
+        id="menu_account_analytic_month"
+        action="action_account_analytic_month"
+        parent="account.menu_analytic_accounting"
+        sequence="22">
+    </menuitem>
+</odoo>

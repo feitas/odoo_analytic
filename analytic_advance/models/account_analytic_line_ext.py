@@ -8,6 +8,8 @@ _logger = logging.getLogger(__name__)
 class AccountAnalyticLineExt(models.Model):
     _inherit = 'account.analytic.line'
 
+    month_id = fields.Many2one('account.analytic.month', string="成本月份")
+
     @api.model
     def create(self, vals):
         def exec_operator(operator, arg1, arg2):
